@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import * as Constants from '../constants'
 
 export default class CreateClient extends Component {
     constructor(props) {
@@ -109,7 +110,7 @@ export default class CreateClient extends Component {
                 "Access-Control-Allow-Origin": "*",
             }
         };
-        axios.post('http://localhost:3000/clients', client, axiosConfig).then(res => console.log(res.data));
+        axios.post(Constants.SERVER_URL +'/clients', client, axiosConfig).then(res => console.log(res.data));
 
         // window.location = '/';
     }
